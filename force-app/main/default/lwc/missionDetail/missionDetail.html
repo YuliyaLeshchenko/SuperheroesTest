@@ -1,0 +1,67 @@
+<template>
+    <div if:true={isLoaded} class="slds-grid slds-grid_vertical md-paddings">
+        <div class="slds-col slds-p-vertical_x-small">
+            <div class="slds-grid slds-grid_align-spread">
+                <b><p class="slds-col md-header">Mission Details</p></b>
+                <p class="slds-col slds-p-vertical_x-small md-header_guild">{superheroMission.guild}</p>
+            </div>
+        </div>
+
+        <div class="slds-col slds-p-vertical_x-small">
+            <div class="md-label">
+                Subject
+            </div>
+            <div class="md-data">
+                {superheroMission.subject}
+            </div>
+        </div>
+    
+        <div class="slds-col slds-p-vertical_x-small">
+            <div class="md-label">
+                Details
+            </div>
+            <div class="md-data">
+                {superheroMission.details}
+            </div>
+        </div>
+        
+        <div class="slds-col slds-p-vertical_x-small">
+            <div class="md-label">
+                Rank
+            </div>
+            <div class="md-data">
+                {superheroMission.rank}
+            </div>
+        </div>
+
+        <div class="slds-col slds-p-vertical_x-small">
+            <hr class="slds-m-around_none">
+        </div>
+
+        <div class="slds-col slds-p-vertical_x-small">
+            <div class="md-label">
+                Reward
+            </div>
+            <div class="md-data">
+                ${superheroMission.reward}
+            </div>
+        </div>
+
+        <div class="slds-col slds-p-vertical_x-small">
+            <div class="md-label">
+                Deadline
+            </div>
+            <div class="md-data am-indicator_red">
+                {superheroMission.deadline}
+            </div>
+        </div>
+    
+        <div if:true={showButton} class="slds-col slds-p-vertical_x-small slds-align-middle">
+            <lightning-button variant={buttonVariant} label={buttonLabel} onclick={handleClick}></lightning-button>
+        </div>
+    </div>
+    
+    <div if:false={isLoaded} class="slds-align_absolute-center md-no_data_text md-paddings">
+        {requestToSelectAMissionLabel}
+    </div>
+</template>

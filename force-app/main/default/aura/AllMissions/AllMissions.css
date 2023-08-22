@@ -1,0 +1,45 @@
+.THIS .am-header {
+    font-size: 24px; 
+    font-weight: 700; 
+    line-height: 34px; 
+    padding-bottom: 16px;
+}
+
+.THIS .am-header_table {
+    background-color: #F1F3F5;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+.THIS .am-table_row {
+    padding: 14px;
+}
+
+.THIS .am-rank {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    padding: 6px 10px 6px 10px;
+}
+
+.THIS .am-status {
+    color: white;
+    border-radius: 23px;
+    text-align: center;
+    padding: 4px 8px 4px 8px;
+}
+
+.THIS .am-status_green {
+    background-color: green;
+}
+
+.THIS .am-status_grey {
+    background-color: grey;
+}
+
+.THIS .am-selected_row:hover {
+    cursor: pointer;
+    background-color: #F1F3F5;
+}
