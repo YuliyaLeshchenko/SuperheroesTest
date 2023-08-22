@@ -1,0 +1,46 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" controller="AllMissionsController">
+    <aura:attribute name="missions" type="list"/>
+
+    <lightning:messageChannel type="MissionDetailsMessageChannel__c"
+                        aura:id="MissionDetailsMessageChannel"
+                        scope="APPLICATION"
+                        onMessage="{!c.doinit}"
+                    />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+
+    <div class="slds-m-around_x-large">
+        <div>
+            <b><p class="am-header">All Missions</p></b>
+        </div>
+
+        <div class="slds-grid slds-gutters slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-grid slds-gutters am-header_table">
+                <div class="slds-col slds-size_1-of-12 slds-text-align_left">Rank</div>
+                <div class="slds-col slds-size_7-of-12 slds-text-align_left">Mission</div>
+                <div class="slds-col slds-size_2-of-12 slds-text-align_left">Guild</div>
+                <div class="slds-col slds-size_2-of-12 slds-text-align_left">Status</div>
+            </div>
+            
+            <aura:iteration items="{!v.missions}" var ="x">
+                <div data-id="{!x.id}" onclick="{!c.handleClick}" class="slds-col slds-size_1-of-1 slds-grid slds-gutters slds-border_bottom am-selected_row am-table_row">
+                    <div class="slds-col slds-size_1-of-12 slds-text-align_left" title="{!x.rank}"><span class="am-rank">{!x.rank}</span></div>
+                    <div class="slds-col slds-size_7-of-12 slds-text-align_left" title="{!x.subject}">{!x.subject}</div>
+                    <div class="slds-col slds-size_2-of-12 slds-text-align_left" title="{!x.guildName}">{!x.guildName}</div>
+                    <div class="slds-col slds-size_2-of-12 slds-text-align_left">
+                        <aura:if isTrue="{!x.status != null}">
+                            <div class="slds-truncate" title="{!x.status}">
+                                <span class="am-status am-status_grey">{!x.status}</span>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-truncate" title="Available">
+                                    <span class="am-status am-status_green">Available</span>
+                                </div>
+                            </aura:set>
+                        </aura:if> 
+                    </div>
+                </div>
+            </aura:iteration>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>HeroRankDoesNotMatchTheMission</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hero rank does not match the mission</shortDescription>
+        <value>Unfortunately, you&apos;re too weak at this point to take on this
+job! Come back when you reach the rank</value>
+    </labels>
+    <labels>
+        <fullName>RequestToSelectAMission</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Request to select a mission</shortDescription>
+        <value>Select a mission to learn more about it</value>
+    </labels>
+    <labels>
+        <fullName>TooManyUnfinishedMissions</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Too many unfinished missions</shortDescription>
+        <value>You have too many unfinished missions</value>
+    </labels>
+</CustomLabels>
